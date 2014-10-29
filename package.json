@@ -1,0 +1,32 @@
+{
+  "name": "react-bar-chart",
+  "version": "0.0.1",
+  "description": "A bar chart component made with React.js and D3.js",
+  "main": "dist/react-bar-chart.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MateusZitelli/react-pie.git"
+  },
+  "keywords": [
+    "react",
+    "graph",
+    "d3",
+    "javascript",
+    "react-component"
+  ],
+  "author": {
+    "name": "Mateus Zitelli Dantas",
+    "email": "zitellimateus@gmail.com"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "css-loader": "^0.9.0",
+    "d3": "^3.4.13",
+    "jsx-loader": "^0.11.2",
+    "react": "^0.11.2",
+    "style-loader": "^0.8.1"
+  }
+}
