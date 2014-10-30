@@ -137,8 +137,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	  componentDidMount:function () {
 	    var props = merge(this.props);
 	
-	    props.width = props.width - margin.left - margin.right;
-	    props.height = props.height - margin.top - margin.bottom;
+	    props.width = props.width - props.margin.left - props.margin.right;
+	    props.height = props.height - props.margin.top - props.margin.bottom;
 	    
 	    this.x = d3.scale.ordinal().rangeRoundBands([0, props.width], 0.1); 
 	    this.y = d3.scale.linear().range([props.height, 0]);
@@ -154,8 +154,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	  shouldComponentUpdate:function (nextProps) {
 	    var props = merge(nextProps);
 	
-	    props.width = props.width - margin.left - margin.right;
-	    props.height = props.height - margin.top - margin.bottom;
+	    props.width = props.width - props.margin.left - props.margin.right;
+	    props.height = props.height - props.margin.top - props.margin.bottom;
 	    
 	    this.x = d3.scale.ordinal().rangeRoundBands([0, props.width], 0.1); 
 	    this.y = d3.scale.linear().range([props.height, 0]);
@@ -267,8 +267,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	// Hot Module Replacement
 	if(false) {
 		// When the styles change, update the <style> tags
-		module.hot.accept("!!/home/mateus/dev/react-components/react-line-chart/node_modules/css-loader/index.js!/home/mateus/dev/react-components/react-line-chart/src/BarChart.css", function() {
-			var newContent = require("!!/home/mateus/dev/react-components/react-line-chart/node_modules/css-loader/index.js!/home/mateus/dev/react-components/react-line-chart/src/BarChart.css");
+		module.hot.accept("!!/home/mateus/dev/react-components/react-bar-chart/node_modules/css-loader/index.js!/home/mateus/dev/react-components/react-bar-chart/src/BarChart.css", function() {
+			var newContent = require("!!/home/mateus/dev/react-components/react-bar-chart/node_modules/css-loader/index.js!/home/mateus/dev/react-components/react-bar-chart/src/BarChart.css");
 			if(typeof newContent === 'string') newContent = [module.id, newContent, ''];
 			update(newContent);
 		});
