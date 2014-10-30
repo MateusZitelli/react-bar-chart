@@ -1,6 +1,6 @@
 {
   "name": "react-bar-chart",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A bar chart component made with React.js and D3.js",
   "main": "dist/react-bar-chart.js",
   "scripts": {

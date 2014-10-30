@@ -78,8 +78,8 @@ var Pie = React.createClass({
   componentDidMount () {
     var props = merge(this.props);
 
-    props.width = props.width - margin.left - margin.right;
-    props.height = props.height - margin.top - margin.bottom;
+    props.width = props.width - props.margin.left - props.margin.right;
+    props.height = props.height - props.margin.top - props.margin.bottom;
     
     this.x = d3.scale.ordinal().rangeRoundBands([0, props.width], 0.1); 
     this.y = d3.scale.linear().range([props.height, 0]);
@@ -95,8 +95,8 @@ var Pie = React.createClass({
   shouldComponentUpdate (nextProps) {
     var props = merge(nextProps);
 
-    props.width = props.width - margin.left - margin.right;
-    props.height = props.height - margin.top - margin.bottom;
+    props.width = props.width - props.margin.left - props.margin.right;
+    props.height = props.height - props.margin.top - props.margin.bottom;
     
     this.x = d3.scale.ordinal().rangeRoundBands([0, props.width], 0.1); 
     this.y = d3.scale.linear().range([props.height, 0]);
