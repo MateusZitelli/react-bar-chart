@@ -59,7 +59,9 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	/**
 	 * @jsx React.DOM */
-	__webpack_require__(/*! ./BarChart.css */ 4);
+	if(true){
+	  __webpack_require__(/*! ./BarChart.css */ 4);
+	}
 	
 	var React = __webpack_require__(/*! react */ 1);
 	var d3 = __webpack_require__(/*! d3 */ 2);

@@ -41,7 +41,13 @@ var webpackConfig = module.exports = {
     moduleDirectories: ['node_modules'],
     extensions: ['', '.js', '.jsx', '.es6']
   },
-  plugins: []
+  plugins: [
+    new webpack.DefinePlugin({
+    'process.env': {
+      NODE_ENV: JSON.stringify(process.env.NODE_ENV || 'production')
+    }
+  })
+  ]
 };
 
 if(IS_PRODUCTION){
