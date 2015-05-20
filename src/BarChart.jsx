@@ -1,5 +1,3 @@
-/**
- * @jsx React.DOM */
 if(process.env.NODE_ENV !== 'production'){
   require('./BarChart.css');
 }
@@ -13,8 +11,7 @@ var merge = function(one, two) {
   return Object.assign({}, one, two);
 };
 
-
-var Pie = React.createClass({
+var BarChart = React.createClass({
   propTypes: {
     data : React.PropTypes.array.isRequired,
   },
@@ -121,4 +118,4 @@ var Pie = React.createClass({
 
 });
 
-module.exports = Pie;
+module.exports = BarChart;

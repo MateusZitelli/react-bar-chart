@@ -6,7 +6,7 @@ var IS_PRODUCTION = 'production' === process.env.NODE_ENV;
 var webpackConfig = module.exports = {
   entry: __dirname + "/src/BarChart.jsx",
   output: {
-    path: __dirname + '/dist',
+    path: __dirname + '/lib',
     filename: 'react-bar-chart.js',
     library: 'BarChart',
     libraryTarget: 'umd'
@@ -29,7 +29,8 @@ var webpackConfig = module.exports = {
     loaders: [
       {
         test: /\.(js|jsx)$/,
-        loader: 'jsx-loader?harmony'
+        loader: 'babel-loader',
+        exclude: 'node_modules'
       },
       {
         test: /\.css$/,

@@ -1,7 +1,3 @@
-/**
- * @jsx React.DOM
- */
-
 var data = [
   {text: "Man", value: 500}, 
   {text: "Woman", value: 300} 
@@ -35,7 +31,7 @@ var Index = React.createClass({
   }
 });
 
-React.renderComponent(
+React.render(
   <Index />,
   document.getElementById("container")
 );
