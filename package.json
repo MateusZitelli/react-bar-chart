@@ -11,14 +11,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/MateusZitelli/react-pie.git"
+    "url": "https://github.com/MateusZitelli/react-bar-chart.git"
   },
   "keywords": [
     "react",
     "graph",
     "d3",
     "javascript",
-    "react-component"
+    "react-component",
+    "bar-chart"
   ],
   "author": {
     "name": "Mateus Zitelli Dantas",
