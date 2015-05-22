@@ -1,6 +1,6 @@
 var data = [
-  {text: "Man", value: 500}, 
-  {text: "Woman", value: 300} 
+  {text: 'Man', value: 500}, 
+  {text: 'Woman', value: 300} 
 ];
 
 var margin = {top: 20, right: 20, bottom: 30, left: 40};
@@ -21,11 +21,14 @@ var Index = React.createClass({
     };
   },
 
+  handleBarClick(element, id){ 
+    console.log('The bin ' + element.text + ' with id ' + id + ' was clicked');
+  },
+
   render: function() {
     return (
-      <div style={{width: "50%"}}> 
-        <BarChart ylabel="Quantity" width={this.state.width} height={500} margin={margin}
-          data={data} />
+      <div style={{width: '50%'}}> 
+          <BarChart ylabel='Quantity' width={this.state.width} height={500} margin={margin} data={data} onBarClick={this.handleBarClick}/>
       </div>
     );
   }
@@ -33,5 +36,5 @@ var Index = React.createClass({
 
 React.render(
   <Index />,
-  document.getElementById("container")
+  document.getElementById('container')
 );

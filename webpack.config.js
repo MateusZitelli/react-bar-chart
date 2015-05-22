@@ -29,7 +29,7 @@ var webpackConfig = module.exports = {
     loaders: [
       {
         test: /\.(js|jsx)$/,
-        loader: 'babel-loader',
+        loader: 'babel-loader?stage=0',
         exclude: 'node_modules'
       },
       {
