@@ -7,7 +7,7 @@ const merge = function(one, two) {
   return Object.assign({}, one, two);
 };
 
-class BarChart extends React.Component {
+export default class BarChart extends React.Component {
   static propTypes = {
     data : React.PropTypes.array.isRequired,
     width : React.PropTypes.number.isRequired,
