@@ -73,7 +73,7 @@ export default class BarChart extends React.Component {
       .style('text-anchor', 'end')
       .text(props.ylabel);
 
-    d3.select('.graph').selectAll('.bar')
+    svg.selectAll('.bar')
       .data(props.data)
       .enter().append('rect')
       .on('click', ::this._handleBarClick)

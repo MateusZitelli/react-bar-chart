@@ -27,9 +27,14 @@ var Index = React.createClass({
 
   render: function() {
     return (
-      <div style={{width: '50%'}}> 
-          <BarChart ylabel='Quantity' width={this.state.width} height={500} margin={margin} data={data} onBarClick={this.handleBarClick}/>
-      </div>
+        <div>
+            <div style={{width: '50%'}}> 
+                <BarChart ylabel='Quantity' width={this.state.width} height={500} margin={margin} data={data} onBarClick={this.handleBarClick}/>
+            </div>
+            <div style={{width: '50%'}}> 
+                <BarChart ylabel='Quantity' width={this.state.width} height={500} margin={margin} data={data} onBarClick={this.handleBarClick}/>
+            </div>
+        </div>
     );
   }
 });
