@@ -23,16 +23,15 @@ const data = [
 const margin = {top: 20, right: 20, bottom: 30, left: 40};
 
 const Example = React.createClass({
-  getInitialState: function() {
+  getInitialState() {
     return { width: 500 };
   },
 
-  componentDidMount: function () {
-    var _this = this;
+  componentDidMount: () => {
     var domNode = this.getDOMNode();
 
-    window.onresize = function(){
-     _this.setState({width: domNode.offsetWidth}); 
+    window.onresize = () => {
+     this.setState({width: domNode.offsetWidth}); 
     };
   },
 
@@ -40,7 +39,7 @@ const Example = React.createClass({
     console.log(`The bin ${element.text} with id ${id} was clicked`);
   },
 
-  render: function() {
+  render() {
     return (
         <div>
             <div style={{width: '50%'}}> 
