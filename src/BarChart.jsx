@@ -25,12 +25,11 @@ export default class BarChart extends React.Component {
   }
 
   _renderGraph(props){
-    var margin = props.margin;
-    var width = props.width;
-    var height = props.height;
+    const margin = props.margin;
+    const width = props.width;
+    const height = props.height;
 
-    var DOMNode = React.findDOMNode(this);
-    var svg = d3.select(DOMNode)
+    let svg = d3.select(this.svg)
       .attr('width', width + margin.left + margin.right)
       .attr('height', height + margin.top + margin.bottom);
 
@@ -41,12 +40,11 @@ export default class BarChart extends React.Component {
   }
 
   _reusableGraph(props){ 
-    var margin = props.margin;
-    var width = props.width;
-    var height = props.height;
+    const margin = props.margin;
+    const width = props.width;
+    const height = props.height;
 
-    var DOMNode = React.findDOMNode(this);
-    var svg = d3.select(DOMNode)
+    let svg = d3.select(this.svg)
       .attr('width', width + margin.left + margin.right)
       .attr('height', height + margin.top + margin.bottom);
 
@@ -99,13 +97,13 @@ export default class BarChart extends React.Component {
   }
 
   componentDidMount(){
-    var props = merge(this.props);
+    const props = merge(this.props);
     this._defineAxis(props);
     this._renderGraph(props);
   }
 
   shouldComponentUpdate(nextProps){
-    var props = merge(nextProps);
+    const props = merge(nextProps);
     this._defineAxis(props);
     this._reusableGraph(props);
     return false;
@@ -113,7 +111,9 @@ export default class BarChart extends React.Component {
 
   render() {
     return (
-      <svg><g className='graph'></g></svg>
+      <svg ref={ref => this.svg = ref}>
+        <g className='graph'></g>
+      </svg>
     );
   }
 }

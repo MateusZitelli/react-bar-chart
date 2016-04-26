@@ -14,10 +14,8 @@ var Index = React.createClass({
 
   componentDidMount: function () {
     var _this = this;
-    var domNode = this.getDOMNode();
-
     window.onresize = function(){
-     _this.setState({width: domNode.offsetWidth}); 
+      _this.setState({width: this.refs.root.offsetWidth}); 
     };
   },
 
@@ -27,19 +25,16 @@ var Index = React.createClass({
 
   render: function() {
     return (
-        <div>
-            <div style={{width: '50%'}}> 
-                <BarChart ylabel='Quantity' width={this.state.width} height={500} margin={margin} data={data} onBarClick={this.handleBarClick}/>
-            </div>
-            <div style={{width: '50%'}}> 
-                <BarChart ylabel='Quantity' width={this.state.width} height={500} margin={margin} data={data} onBarClick={this.handleBarClick}/>
-            </div>
+      <div ref='root'>
+        <div style={{width: '50%'}}> 
+          <BarChart ylabel='Quantity' width={this.state.width} height={500} margin={margin} data={data} onBarClick={this.handleBarClick}/>
         </div>
+      </div>
     );
   }
 });
 
-React.render(
+ReactDOM.render(
   <Index />,
   document.getElementById('container')
 );
