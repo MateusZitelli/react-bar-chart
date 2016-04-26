@@ -28,10 +28,8 @@ const Example = React.createClass({
   },
 
   componentDidMount: () => {
-    var domNode = this.getDOMNode();
-
     window.onresize = () => {
-     this.setState({width: domNode.offsetWidth}); 
+     this.setState({width: this.refs.root.offsetWidth}); 
     };
   },
 
@@ -41,7 +39,7 @@ const Example = React.createClass({
 
   render() {
     return (
-        <div>
+        <div ref='root'>
             <div style={{width: '50%'}}> 
                 <BarChart ylabel='Quantity'
                   width={this.state.width}
