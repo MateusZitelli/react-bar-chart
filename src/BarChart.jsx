@@ -1,4 +1,5 @@
 import React from 'react';
+import { array, number, object, string } from 'prop-types';
 import d3 from 'd3';
 
 require('./utils/assign');
@@ -9,11 +10,11 @@ const merge = function(one, two) {
 
 export default class BarChart extends React.Component {
   static propTypes = {
-    data : React.PropTypes.array.isRequired,
-    width : React.PropTypes.number.isRequired,
-    height : React.PropTypes.number.isRequired,
-    margin : React.PropTypes.object,
-    ylabel : React.PropTypes.string
+    data : array.isRequired,
+    width : number.isRequired,
+    height : number.isRequired,
+    margin : object,
+    ylabel : string
   };
 
   static defaultProps = { margin: {top: 0, right: 0, bottom: 0, left: 0} };
@@ -39,7 +40,7 @@ export default class BarChart extends React.Component {
     this._reusableGraph(props);
   }
 
-  _reusableGraph(props){ 
+  _reusableGraph(props){
     const margin = props.margin;
     const width = props.width;
     const height = props.height;
@@ -52,10 +53,10 @@ export default class BarChart extends React.Component {
       .attr('transform', `translate(${margin.left}, ${margin.top})`);
 
     svg.selectAll('rect').remove();
-      
+
     svg.select('.x.axis').remove();
     svg.select('.y.axis').remove();
-    
+
     svg.append('g')
       .attr('class', 'x axis')
       .attr('transform', `translate(0, ${height})`)
@@ -85,8 +86,8 @@ export default class BarChart extends React.Component {
   _defineAxis(props){
     props.width = props.width - props.margin.left - props.margin.right;
     props.height = props.height - props.margin.top - props.margin.bottom;
-    
-    this.x = d3.scale.ordinal().rangeRoundBands([0, props.width], 0.1); 
+
+    this.x = d3.scale.ordinal().rangeRoundBands([0, props.width], 0.1);
     this.y = d3.scale.linear().range([props.height, 0]);
 
     this.x.domain(props.data.map(d => d.text));
