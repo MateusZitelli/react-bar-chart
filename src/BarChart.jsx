@@ -43,6 +43,7 @@ export default class BarChart extends React.Component {
   _reusableGraph(props){
     const margin = props.margin;
     const width = props.width;
+    const maxWidth = props.maxWidth;
     const height = props.height;
 
     let svg = d3.select(this.svg)
@@ -77,8 +78,17 @@ export default class BarChart extends React.Component {
       .enter().append('rect')
       .on('click', ::this._handleBarClick)
       .attr('class', 'bar')
-      .attr('x', d => this.x(d.text))
-      .attr('width', this.x.rangeBand())
+      .attr("x", d => {
+        let width = this.x.rangeBand()
+        let padding = width > maxWidth ? width - maxWidth : 0
+        let xPos = this.x(d.text)
+        return maxWidth ? xPos + padding / 2 : xPos
+      })
+      .attr("width", () => {
+        let width = this.x.rangeBand()
+        width = maxWidth && width > maxWidth ? maxWidth : width
+        return width
+      })
       .attr('y', d => this.y(d.value))
       .attr('height', d => height - this.y(d.value));
   }
